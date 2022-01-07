@@ -5,34 +5,34 @@ This code deploys a HUB & Spoke modular infrastructure on Azure Cloud.
 ## Modules
 
 1. <b>base</b> = it´s the mandatory module which deploys the following components:
-- Resource Groups
-- Log Analytics Workspace
-- VNET
-- Subnets
-- IP Groups
-- Network Security Groups
-- Azure Firewall
-- Azure Bastion
-- Routing Tables
-- VNET Peering between HUB and Spokes
+    - Resource Groups
+    - Log Analytics Workspace
+    - VNET
+    - Subnets
+    - IP Groups
+    - Network Security Groups
+    - Azure Firewall
+    - Azure Bastion
+    - Routing Tables
+    - VNET Peering between HUB and Spokes
 
 2. <b>vpn-gateway</b> = deploy the VPN Gateway for On-Premises integration. The following components are deployed at this stage:
-- Virtual Network Gateway
+    - Virtual Network Gateway
 
 3. <b>vpn-connections</b> = deploy the VPN Connections to establish IPSec tunnel between HUB & On-Premises integration. The following components are deployed at this stage:
-- Local Network Gateway
-- Virtual Network Gateway Connection
+    - Local Network Gateway
+    - Virtual Network Gateway Connection
 
 4. <b>virtual-machines</b> = deploy the virtual-machines into the subnets (Spoke-1, Spoke-2 and On-Premises). Also a custom data script is loaded during VM provisioning.
 
 5. <b>frontdoor</b> = deploy the Azure FrontDoor and the following components:
-- Dedicated VNET and Subnet to host the WebApp virtual-machine (as a sample for security isolation)
-- Network Security Group
-- VNET Peering between HUB and WebApp VNET
-- Azure FrontDoor (frontend, backend pools, probes and routing rules)
-- Azure Firewall NAT Rule
-- Web Application Firewall linked on Azure FrontDoor and loading two rules: 1) custom (block IP) and 2) Managed Rule - Default Rule Set
-- IP Groups
+    - Dedicated VNET and Subnet to host the WebApp virtual-machine (as a sample for security isolation)
+    - Network Security Group
+    - VNET Peering between HUB and WebApp VNET
+    - Azure FrontDoor (frontend, backend pools, probes and routing rules)
+    - Azure Firewall NAT Rule
+    - Web Application Firewall linked on Azure FrontDoor and loading two rules: 1) custom (block IP) and 2) Managed Rule - Default Rule Set
+    - IP Groups
 
 ## Usage
 
