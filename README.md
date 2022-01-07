@@ -5,16 +5,16 @@ This code deploys a HUB & Spoke modular infrastructure on Azure Cloud.
 ## Modules
 
 1. <b>base</b> = it´s the mandatory module which deploys the following components:
--- Resource Groups
--- Log Analytics Workspace
--- VNET
--- Subnets
--- IP Groups
--- Network Security Groups
--- Azure Firewall
--- Azure Bastion
--- Routing Tables
--- VNET Peering between HUB and Spokes
+- Resource Groups
+- Log Analytics Workspace
+- VNET
+- Subnets
+- IP Groups
+- Network Security Groups
+- Azure Firewall
+- Azure Bastion
+- Routing Tables
+- VNET Peering between HUB and Spokes
 
 2. <b>vpn-gateway</b> = deploy the VPN Gateway for On-Premises integration. The following components are deployed at this stage:
 - Virtual Network Gateway
