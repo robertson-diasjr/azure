@@ -26,4 +26,4 @@ Let me know and I'll be glad to invite you !!!, then ...
 - GNU
 
 ## Diagram
-![Hub-Spoke-Diagram](https://github.com/robertson-diasjr/azure/blob/main/azure/hub-spoke/Diagram.jpg)
+![Hub-Spoke-Diagram](https://github.com/robertson-diasjr/azure/blob/master/hub-spoke/Diagram.jpg)
