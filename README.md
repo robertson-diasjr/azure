@@ -1,14 +1,46 @@
 # Azure Cloud - Hub & Spoke deployment
 
-This code deploys a HUB & Spoke diagram on Azure Cloud. For testing purposes, you can deploy the base foundation (1) and pick-up the modules you want to deploy. For instance, you can deploy the "base" and virtual-machines (4) to simulate spoke-to-spoke flows. If you want to simulate flows to/from On-Premises, the VPN components (2 and 3) are required.
+This code deploys a HUB & Spoke modular infrastructure on Azure Cloud. 
 
-## Installation
+## Modules
 
-Terraform and Git (considering option 1 below) are required.
+1. <b>base</b> = it´s the mandatory module which deploys the following components:
+- Resource Groups
+- Log Analytics Workspace
+- VNET
+- Subnets
+- IP Groups
+- Network Security Groups
+- Azure Firewall
+- Azure Bastion
+- Routing Tables
+- VNET Peering between HUB and Spokes
+
+2. <b>vpn-gateway</b> = deploy the VPN Gateway for On-Premises integration. The following components are deployed at this stage:
+- Virtual Network Gateway
+
+3. <b>vpn-connections</b> = deploy the VPN Connections to establish IPSec tunnel between HUB & On-Premises integration. The following components are deployed at this stage:
+- Local Network Gateway
+- Virtual Network Gateway Connection
+
+4. <b>virtual-machines</b> = deploy the virtual-machines into the subnets (Spoke-1, Spoke-2 and On-Premises). Also a custom data script is loaded during VM provisioning.
+
+5. <b>frontdoor</b> = deploy the Azure FrontDoor and the following components:
+- Dedicated VNET and Subnet to host the WebApp virtual-machine (as a sample for security isolation)
+- Network Security Group
+- VNET Peering between HUB and WebApp VNET
+- Azure FrontDoor (frontend, backend pools, probes and routing rules)
+- Azure Firewall NAT Rule
+- Web Application Firewall linked on Azure FrontDoor and loading two rules: 1) custom (block IP) and 2) Managed Rule - Default Rule Set
+- IP Groups
 
 ## Usage
 
-You can 1) clone this repo or 2) download the individual files (respecting the directory structure). Up to you which options better fits your requirement ;-).
+You can:
+1. clone this repo or
+2. download the individual files (respecting the directory structure). 
+
+Up to you choose the option better fits your requirement ;-).
 
 ## Contributing
 
