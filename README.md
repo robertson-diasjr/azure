@@ -38,7 +38,7 @@ This code deploys a HUB & Spoke modular infrastructure on Azure Cloud.
 
 You can:
 1. clone this repo or
-2. download the individual files (respecting the directory structure). 
+2. download the individual files (respecting the directory hierarchy). 
 
 Up to you choose the option better fits your requirement ;-).
 
